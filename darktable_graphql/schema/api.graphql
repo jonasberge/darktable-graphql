@@ -1,0 +1,45 @@
+schema {
+    query: Query
+}
+
+type Query {
+    metadata: Metadata!
+    listImages(limit: Int): [Image]
+    listTaggedImages(tags: [String!]!): [Image]
+}
+
+# general metadata information about the api and darktable
+type Metadata {
+    darktableVersion: String!
+    darktableVersionFull: String!
+    libraryVersion: Int!
+    dataVersion: Int!
+}
+
+type Image {
+    id: ID!
+    # version: Int
+    # filmRoll: FilmRoll
+    filename: String
+    url: String
+    tags: [ImageTag]
+}
+
+type ImageTag {
+    tag: Tag
+    position: Float
+}
+
+type Tag {
+    id: ID!
+    name: String
+    images: [Image]
+    # +synonyms
+    # +flags (isCategory, isPrivate)
+}
+
+type FilmRoll {
+    id: ID!
+    folder: String
+    images: [Image]
+}

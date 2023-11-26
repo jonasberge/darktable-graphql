@@ -1,0 +1,31 @@
+{
+  "darktable": {
+    "configDir": "/media/photography/Darktable/config-ubuntu",
+    "cliPath": "/media/photography/Darktable/install/darktable-ubuntu/bin/darktable-cli",
+    "cliArgs": [
+      "--hq 0",
+      "--upscale 0",
+      "--icc-type SRGB"
+    ],
+    "coreArgs": []
+  },
+  "security": {
+    "whitelist": {
+      "tags": ["public"],
+      "exportFormats": ["jpg"]
+    },
+    "limits": {
+      "width": 1728,
+      "height": 972,
+      "formatQuality": {
+        "jpg": 80
+      }
+    }
+  },
+  "config": {
+    "excludeDarktableTags": true
+  },
+  "defaults": {
+    "exportFormat": "jpg"
+  }
+}
